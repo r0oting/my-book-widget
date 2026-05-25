@@ -91,7 +91,7 @@
             
             try {
                 // 백엔드를 통해 알라딘 검색 API 호출
-                const res = await fetch(`${BACKEND_URL}/search?query=${encodeURIComponent(query)}`);
+                const res = await fetch(`${BACKEND_URL}/api/search?query=${encodeURIComponent(query)}`);
                 const data = await res.json();
                 
                 statusDiv.innerText = '';
@@ -118,7 +118,7 @@
             statusDiv.innerText = `[${book.title}] 노션에 등록 중...`;
             
             try {
-                const res = await fetch(`${BACKEND_URL}/add-to-notion`, {
+                const res = await fetch(`${BACKEND_URL}/api/add-to-notion`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(book)
