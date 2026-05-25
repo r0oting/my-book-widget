@@ -68,7 +68,7 @@
 <body>
 
     <div class="search-container">
-        <input type="text" id="query" class="search-input" placeholder="책 제목을 입력하세요...">
+        <input type="text" id="query" class="search-input" placeholder="도서명을 입력하세요...">
         <button onclick="searchBooks()" class="search-btn">검색</button>
     </div>
     
@@ -77,7 +77,7 @@
 
     <script>
         // 백엔드 서버 주소 (구배포 후 생성된 URL 입력)
-        const BACKEND_URL = 'https://my-book-backend-git-main-rooting-s-projects.vercel.app'; 
+        const BACKEND_URL = 'https://my-book-backend.vercel.app'; 
 
         async function searchBooks() {
             const query = document.getElementById('query').value;
@@ -85,7 +85,7 @@
             const resultsUl = document.getElementById('results');
             resultsUl.innerHTML = '';
             
-            if(!query) return alert('책 이름을 입력해주세요.');
+            if(!query) return alert('도서명을 입력해주세요.');
             
             statusDiv.innerText = '검색 중...';
             
