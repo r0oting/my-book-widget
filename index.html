@@ -93,6 +93,7 @@
                 // 백엔드를 통해 알라딘 검색 API 호출
                 const res = await fetch(`${BACKEND_URL}/api/search?query=${encodeURIComponent(query)}`);
                 const data = await res.json();
+                console.log('응답 데이터:', JSON.stringify(data));
                 
                 statusDiv.innerText = '';
                 if(data.item && data.item.length > 0) {
